@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.stack {
+  top: 1300px;
+
+  b {
+    margin-right: 25px;
+  }
+
+  div {
+    margin-left: 50px;
+
+    p {
+      margin: 0;
+    }
+  }
+}

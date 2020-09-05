@@ -1,0 +1,20 @@
+@import '../../../variables.scss';
+
+
+#loader-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $bg-color;
+  z-index: 99999;
+
+  .fa-spinner {
+    position: absolute;
+    font-size: 60px;
+    top: calc((100vh / 2) - 30px);
+    left: calc((100vw / 2) - 30px);
+    color: $unique-font-color;
+  }
+}

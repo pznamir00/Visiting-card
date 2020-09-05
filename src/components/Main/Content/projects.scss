@@ -1,0 +1,16 @@
+@import '../../../variables.scss';
+
+.projects {
+  top: 400px;
+
+  h5 {
+    margin-left: -10px;
+    margin-top: 40px;
+  }
+
+  p {
+    span {
+      font-size: 13px;
+    }
+  }
+}
