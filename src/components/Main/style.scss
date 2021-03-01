@@ -1,37 +1,39 @@
 @import '../../variables.scss';
 
 
-main {
-  .content-element {
-    position: absolute;
-    padding: 20px;
+main{
 
-    h2 {
-      color: $unique-font-color;
-      margin-bottom: 25px;
+    #content{
+        margin: 100px;
+
+        section{
+            margin-bottom: 200px;
+
+            h2{
+                font-family: $header-font;
+                margin-bottom: 40px;
+            }
+
+            a{
+                color: $super-color;
+            }
+        }
     }
-  }
 
-  .content-element:nth-child(even) {
-    right: 200px;
-    text-align: right;
-
-    @media (max-width: 1000px){
-      right: 0;
+    .dot {
+        height: 400px;
+        width: calc(100vw -19px);
+        margin-top: 200px;
+        border-radius: 50%;
+        background-color: $super-color;
     }
-  }
 
-  .content-element:nth-child(odd) {
-    left: 200px;
-    text-align: left;
-
-    @media (max-width: 1000px){
-      left: 0;
+    .contact-field{
+        height: 400px;
+        margin-top: -200px;
+        z-index: 0;
+        background-color: $super-color;
     }
-  }
-
-  .content {
-    height: 2000px;
-    border-bottom: 1px solid #3e3f46;
-  }
 }
+
+

@@ -1,20 +1,30 @@
 @import '../../variables.scss';
 
-footer {
-  background-color: inherit;
-  text-align: center;
-  font-family: $unique-font-family;
-  font-size: 12px;
-  margin-top: 50px;
 
-  p {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+footer{
+    background: $dark-bg;
+    color: $bg-color;
+    text-align: center;
+    padding-top: 30px;
 
-  span {
-    display: block;
-    margin: 7px 4px;
-  }
+    div:first-child{
+        padding: 10px;
+        font-size: 20px;
+
+        p{
+            font-size: 70px;
+            a{
+                color: $bg-color;
+                &:hover{
+                    color: $super-color;
+                    transition: .5s;
+                }
+            }
+        }
+    }
+    
+    div:last-child{
+        background: $dark-bg-2;
+        padding: 10px;
+    }
 }

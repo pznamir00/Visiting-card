@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+
+
+#projects{
+    text-align: left;
+    margin-left: -2000px;
+}
+
+#stack{
+    text-align: right;
+    margin-right: -2000px;
+}
+
+#links{
+    text-align: left;
+    margin-left: -2000px;
+}
+
+.big-icon{
+    font-size: 250px;
+    margin: 100px 40px 0px !important;
+    color:$super-color;
+
+    &:last-child{
+        margin-top: 0 !important;
+    }
+}

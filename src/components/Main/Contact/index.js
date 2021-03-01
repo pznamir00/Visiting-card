@@ -8,8 +8,8 @@ const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+
 
 class Contact extends React.Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props);
     this.state = {
       valid: false,
       alert: null,
@@ -22,9 +22,9 @@ class Contact extends React.Component {
   }
 
 
-  inputChanged = async (e) => {
+  inputChanged = e => {
     const { value, name } = e.target;
-    await this.setState({
+    this.setState({
       [name]: value
     })
   }
@@ -60,7 +60,7 @@ class Contact extends React.Component {
 
 
   checkEmailIsValid = () => {
-    return (emailPattern.test(this.state.email))
+    return emailPattern.test(this.state.email)
   }
 
 
@@ -77,24 +77,25 @@ class Contact extends React.Component {
       $("input[name='subject']").html('');
       $("input[name='message']").html('');
     })
-    .catch(error => console.log(error));
+    .catch(status => console.error(status));
   }
 
 
   render = () => {
     let alertColor = this.state.valid ? 'success' : 'danger';
-
     return (
       <form id="contact-form" method="POST" onSubmit={this.formSubmitHandle}>
         <h3 className="text-center mb-4"><i className="fa fa-envelope"/>Formularz kontaktowy</h3>
         {this.state.alert &&
           <div className={'btn btn-' + alertColor}>{this.state.alert}</div>
         }
-        <input name="email" onChange={this.inputChanged} type="email" className="form-control" placeholder="Twój email"/>
-        <input name="subject" onChange={this.inputChanged} type="text" className="form-control" placeholder="Temat"/>
-        <textarea name="message" onChange={this.inputChanged} className="form-control" placeholder="Treść"></textarea>
-        <input type="submit" className="btn-send"/>
-        <small className="float-right">* Wszystkie pola są wymagane</small>
+        <input name="email" onChange={this.inputChanged} type="email" className="form-control m-2 bg-dark border-secondary" placeholder="Twój email"/>
+        <input name="subject" onChange={this.inputChanged} type="text" className="form-control m-2 bg-dark border-secondary" placeholder="Temat"/>
+        <textarea name="message" onChange={this.inputChanged} className="form-control m-2 bg-dark border-secondary" placeholder="Treść"></textarea>
+        <div className="d-flex justify-content-between">
+          <input type="submit" className="btn btn-default mt-2" value="Wyślij wiadomość"/>
+          <small><b>* Wszystkie pola są wymagane</b></small>
+        </div>
       </form>
     )
   }

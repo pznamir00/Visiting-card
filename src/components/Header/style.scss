@@ -1,39 +1,26 @@
 @import '../../variables.scss';
 
-header {
-  width: 100%;
-  border-bottom: 4px groove #3e3f46;
 
-  h2 {
-    margin-top: 90px;
-    margin-left: 120px;
-    font-family: $unique-font-family;
-    color:  #4297ff;
-    opacity: 0.7;
-    letter-spacing: 2px;
-    font-size: 40px;
-
-    @media(max-width: 800px){
-      text-align: center;
-      margin-left: 0;
-    }
-  }
-
-  .container, .row {
+header{
+    position: fixed;
     width: 100%;
-    margin-bottom: 15px;
+    font-family: $header-font;
+    color: $super-color;
 
-    div {
-      text-align: center;
-
-      button {
-        background: transparent;
-        border: none;
-        color: $unique-font-color;
-        font-family: $unique-font-family;
-        font-weight: bold;
-        text-align: center;
-      }
+    .navbar{
+        background-color: $bg-color-2;
     }
-  }
+
+    .navbar-brand{
+        font-size: 30px;
+    }
+
+    .nav-item{
+        margin-left: 15px;
+    }
+
+    button{
+        border: none;
+        background: transparent;
+    }
 }

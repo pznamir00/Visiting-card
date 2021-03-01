@@ -6,34 +6,40 @@ import $ from 'jquery'
 
 const Header = () => {
 
-  const scroll = (e) => {
-    const { level } = e.target.dataset;
-    $('html').animate({
-      scrollTop: level
-    }, 300)
+  const scroll = e => {
+    const { section } = e.target.dataset;
+    let target = $(`#${section}`);
+    $([document.documentElement, document.body]).animate({
+      scrollTop: target.offset().top-80
+    }, 1000);
   }
 
   return (
-    <header>
-      <h2>Patryk Znamirowski</h2>
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-12 col-md-3">
-            <button data-level="360" onClick={scroll}><i className="fa fa-tasks"></i>Projekty</button>
-          </div>
-          <div className="col-12 col-md-3">
-            <button data-level="1200" onClick={scroll}><i className="fa fa-cubes"></i>Technologie</button>
-          </div>
-          <div className="col-12 col-md-3">
-            <button data-level="1600" onClick={scroll}><i className="fa fa-link"></i>Odnośniki</button>
-          </div>
-          <div className="col-12 col-md-3">
-            <button data-level="2100" onClick={scroll}><i className="fa fa-envelope"></i>Kontakt</button>
-          </div>
-        </div>
-      </div>
-      <Loader />
-    </header>
+      <header>
+          <nav class="navbar navbar-expand-lg">
+            <h2 class="navbar-brand mx-auto mx-5 px-5">Patryk Znamirowski</h2>
+            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active text-center">
+                        <button data-section="projects" className='text-muted' onClick={scroll}><i className="fa fa-tasks"></i>Projekty</button>
+                    </li>
+                    <li class="nav-item active text-center">
+                        <button data-section="stack" className='text-muted' onClick={scroll}><i className="fa fa-cubes"></i>Technologie</button>
+                    </li>
+                    <li class="nav-item active text-center">
+                        <button data-section="links" className='text-muted' onClick={scroll}><i className="fa fa-link"></i>Odnośniki</button>
+                    </li>
+                    <li class="nav-item active text-center">
+                        <button data-section="contact-form" className='text-muted' onClick={scroll}><i className="fa fa-envelope"></i>Kontakt</button>
+                    </li>
+                </ul>
+            </div>
+          </nav>
+          <Loader />
+      </header>
   )
 }
 
